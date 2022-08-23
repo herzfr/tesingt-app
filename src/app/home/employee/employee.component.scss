@@ -1,0 +1,69 @@
+.example-tab-icon {
+  margin-right: 8px;
+}
+
+::ng-deep th.mat-header-cell {
+  font-weight: bolder !important;
+}
+
+span {
+  color: #000 !important;
+}
+
+::ng-deep .mat-checkbox-label {
+  color: #000 !important;
+}
+
+.content {
+  height: -webkit-fill-available !important;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color: #154d51 !important;
+}
+
+.mat-form-field-wrapper {
+  padding: 0 !important;
+}
+
+.mat-elevation-z8 {
+  overflow: auto;
+  max-height: 80vh;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  //   width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.mat-input-element {
+  color: #000 !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.image-filter {
+  width: 100%;
+}
+
+.btn-check {
+  filter: drop-shadow(0px 10px 22px rgba(149, 173, 254, 0.3));
+  background: linear-gradient(274.42deg, #f7c123 0%, #f7db85 124.45%);
+  border-radius: 99px;
+  color: #383838;
+}

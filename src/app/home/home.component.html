@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon class="toggle" *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon class="toggle" *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+    TESTING APP
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="side-class">
+        <img src="assets/images/profile.jpg" class="avatar mat-elevation-z8" alt="" />
+
+        <h4 class="name">HERZA FELLANI R</h4>
+        <p class="designation mb-0">fellaniherza@gmail.com</p>
+        <p class="designation">ADMIN</p>
+
+        <mat-divider></mat-divider>
+
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{ menuItem.class }} nav-item"
+                (click)="check(menuItem.path)">
+                <a [routerLink]="[menuItem.path]">
+                    <span style="    font-size: smaller;" class="icon">
+                        <mat-icon>{{ menuItem.icon }}</mat-icon>
+                    </span>
+                    <span style="font-size: smaller;" class="title">{{ menuItem.title }}</span>
+                </a>
+            </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <button (click)="logout()" mat-raised-button class="logout">
+            <mat-icon>logout</mat-icon>Keluar
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

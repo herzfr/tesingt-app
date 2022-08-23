@@ -1,0 +1,223 @@
+$darkGreen: #154d51;
+$white: #ffffff;
+$gold: #be8726;
+$yellowClaw: #ffc107;
+
+mat-toolbar {
+  background: $darkGreen !important;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px 0px 0px 16px;
+  width: 190px;
+  border-right: none;
+  background: $darkGreen;
+  color: wheat;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 98px);
+  margin: 16px;
+  position: inherit;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  font-size: 2rem;
+  color: lightgray;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+tr .menu-button {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 1rem;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+
+.toggle {
+  margin-right: 0px;
+}
+
+.avatar {
+  width: 30%;
+  height: 9%;
+  border-radius: 100%;
+  margin: 10%;
+}
+
+.name {
+  margin: 0;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: $white;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mat-drawer-container {
+  background: transparent;
+}
+
+//   ======================================================
+//
+//   ======================================================
+
+ul {
+  padding: 0px;
+  padding-left: 10px;
+  max-height: 350px;
+
+  li {
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    a {
+      position: relative;
+      display: block;
+      width: 100%;
+      display: flex;
+      text-decoration: none;
+      color: $white;
+
+      .icon {
+        position: relative;
+        display: block;
+        min-width: 40px;
+        height: 40px;
+        line-height: 55px;
+        text-align: center;
+      }
+
+      .title {
+        position: relative;
+        display: block;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        text-align: start;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  li:hover,
+  li.active {
+    background: $white;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+  li:hover a,
+  li.active a {
+    color: $gold;
+  }
+
+  li:hover {
+    a::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -50px;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 35px 35px 0 10px $white;
+      pointer-events: none;
+    }
+  }
+
+  li.active {
+    a::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -50px;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 35px 35px 0 10px $white;
+      pointer-events: none;
+    }
+  }
+
+  li:hover {
+    a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -50px;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 35px -35px 0 10px $white;
+      pointer-events: none;
+    }
+  }
+
+  li.active {
+    a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -50px;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: 35px -35px 0 10px $white;
+      pointer-events: none;
+    }
+  }
+}
+
+.router-link-active {
+  color: #000;
+  font-weight: bold;
+}
+
+.img-logo {
+  width: 50px;
+}
+
+.logout {
+  background-color: $yellowClaw;
+  color: $white;
+}
+
+@media only screen and (max-width: 700px) {
+  .content {
+    margin-left: 0px;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h3 {
+    font-size: x-small;
+  }
+}

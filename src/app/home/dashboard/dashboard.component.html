@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <h2>Dashboard</h2>
+
+    <div class="row">
+        <mat-card-title>Group Analysis</mat-card-title>
+        <div #cardFace class="card-handle-size">
+            <ngx-charts-pie-chart *ngIf="show" (window:resize)="onResize($event)" [view]="view" [scheme]="colorScheme"
+                [results]="single" [gradient]="gradient" [legend]="showLegend" [legendPosition]="legendPosition"
+                [labels]="showLabels" [doughnut]="isDoughnut">
+            </ngx-charts-pie-chart>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <mat-card class="example-card col mb-2">
+            <mat-card-title>Salary</mat-card-title>
+            <div #cardlinechart style="width: 100% !important;" class="card-handle-size w-100" *ngIf="show">
+                <ng-container *ngIf="pieData.length > 0;else templateIncome">
+                    <ngx-charts-bar-horizontal (window:resize)="onResize($event)" [view]="views" [scheme]="colorScheme"
+                        [legend]="legend" [legendTitle]="legenTitle" [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel" [results]="pieData">
+                    </ngx-charts-bar-horizontal>
+                </ng-container>
+                <ng-template #templateIncome>
+                    <div id="container">
+                        Belum ada data
+                    </div>
+
+                </ng-template>
+            </div>
+        </mat-card>
+
+
+
+    </div>

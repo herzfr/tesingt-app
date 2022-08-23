@@ -1,0 +1,44 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card">
+        <div class="card-header text-center">
+            <img src="https://png.vector.me/files/images/2/1/215115/hawx_logo_vector.png" alt="logo" class="img-fluid">
+        </div>
+        <div class="card-body text-center">
+            <h4 class="card-title mb-0">ONE ZERO</h4>
+            <p class="card-text">Selamat Datang.</p>
+            <form [formGroup]="loginForm">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Masukan email anda" formControlName="username">
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                        <mat-hint class="text-danger" *ngIf="username?.errors">Username masih belum benar</mat-hint>
+                        <mat-hint class="text-success" *ngIf="username?.valid">Username sudah benar</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input [type]="hide ? 'password' : 'text'" matInput placeholder="Masukan password anda"
+                            formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-hint class="text-danger" *ngIf="password?.errors">Password belum terisi</mat-hint>
+                        <mat-hint class="text-success" *ngIf="password?.valid">Password sudah terisi</mat-hint>
+                    </mat-form-field>
+                </p>
+            </form>
+
+            <div class="d-flex justify-content-center">
+                <a (click)="submitLogin()" class="btn btn-login d-flex justify-content-center col-5">
+                    <mat-spinner *ngIf="isSubmit" [diameter]="20"></mat-spinner>
+                    <mat-icon *ngIf="!isSubmit" class="mr-1" matSuffix>login</mat-icon> Masuk
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

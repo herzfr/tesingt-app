@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.backdropBackground {
+  backdrop-filter: blur(4px);
+  -webkit-filter: blur(5px) !important;
+  -moz-filter: blur(5px) !important;
+  -o-filter: blur(5px) !important;
+  -ms-filter: blur(5px) !important;
+  filter: blur(5px) !important;
+  max-height: 90vh !important;
+}

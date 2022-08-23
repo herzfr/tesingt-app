@@ -1,0 +1,77 @@
+// ADVANCE PIE CHART ==================
+::ng-deep .advanced-pie-legend {
+  width: 100%;
+}
+
+::ng-deep .advanced-pie-legend .legend-items-container .legend-items {
+  height: 100px;
+  align-items: center !important;
+  display: flex !important;
+  color: #000;
+}
+
+::ng-deep
+  .advanced-pie-legend
+  .legend-items-container
+  .legend-items
+  .legend-item
+  .item-value {
+  font-size: 0.8rem !important;
+  margin-bottom: 5px !important;
+}
+
+::ng-deep
+  .advanced-pie-legend
+  .legend-items-container
+  .legend-items
+  .legend-item
+  .item-percent {
+  font-size: 18px !important;
+}
+
+::ng-deep .advanced-pie-legend .total-label {
+  font-size: 14px !important;
+  margin-bottom: 0px !important;
+}
+
+::ng-deep .advanced-pie-legend .total-value {
+  color: #101010;
+  font-size: 20px !important;
+}
+
+::ng-deep
+  .advanced-pie-legend
+  .legend-items-container
+  .legend-items
+  .legend-item
+  .item-value::before {
+  content: "Anggota: ";
+}
+
+::ng-deep .advanced-pie-legend .total-value::before {
+  content: "Hasta Karya Aktif: ";
+}
+
+.card-handle-size {
+  width: inherit !important;
+  height: inherit !important;
+}
+
+.chartStyle {
+  width: max-content;
+  height: max-content;
+  border: 1px solid transparent;
+}
+
+::ng-deep .chart-legend .legend-labels {
+  line-height: 10% !important;
+}
+
+.btn-go {
+  background-color: #154d51;
+  color: #ffffff;
+}
+
+.text-modify {
+  color: #12a3ad !important;
+}

@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <li class="list-group">
+        Form
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="username" required>
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-hint *ngIf="username?.valid">Required</mat-hint>
+                    <mat-error *ngIf="username?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="firstName" required>
+                    <mat-icon matSuffix>badge</mat-icon>
+                    <mat-hint *ngIf="firstName?.valid">Required</mat-hint>
+                    <mat-error *ngIf="firstName?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="lastName" required>
+                    <mat-icon matSuffix>badge</mat-icon>
+                    <mat-hint *ngIf="lastName?.valid">Required</mat-hint>
+                    <mat-error *ngIf="lastName?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="email" required>
+                    <mat-icon matSuffix>mail</mat-icon>
+                    <mat-hint *ngIf="email?.valid">Required</mat-hint>
+                    <mat-error *ngIf="email?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Choose a Birthdate</mat-label>
+                    <input matInput [matDatepicker]="datepicker" formControlName="birthDate">
+                    <mat-hint *ngIf="birthDate?.valid">Required</mat-hint>
+                    <mat-error *ngIf="birthDate?.invalid">Must be required</mat-error>
+                    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Salary</mat-label>
+                    <input type="number" matInput placeholder="Placeholder" formControlName="basicSalary" required>
+                    <mat-icon matSuffix>payments</mat-icon>
+                    <mat-hint *ngIf="basicSalary?.valid">Required</mat-hint>
+                    <mat-error *ngIf="basicSalary?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                        <mat-option *ngFor="let re of status" [value]="re">{{ re }}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="statusE?.valid">Required</mat-hint>
+                    <mat-error *ngIf="statusE?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Group</mat-label>
+                    <mat-select formControlName="group">
+                        <mat-option *ngFor="let re of groups" [value]="re">{{ re }}</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="group?.valid">Required</mat-hint>
+                    <mat-error *ngIf="group?.invalid">Must be required</mat-error>
+                </mat-form-field>
+            </p>
+
+            <div class="row">
+                <button type="button" (click)="onNoClick()" class="btn btn-dark">Close</button>
+                <button type="submit" mat-raised-button [disabled]="!form.valid">Save</button>
+            </div>
+        </form>
+    </li>
+
+</div>

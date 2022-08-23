@@ -1,0 +1,45 @@
+<div class="container-fluid text-center">
+    <h4>Detail Employee</h4>
+    <ul class="list-group mb-2">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Username
+            <span class="badge text-dark ml-2">{{ employee.username }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            First Name
+            <span class="badge text-dark ml-2">{{ employee.firstName }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Last Name
+            <span class="badge text-dark ml-2">{{ employee.lastName }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Email
+            <span class="badge text-dark ml-2">{{ employee.email }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Birthdate
+            <span class="badge text-dark ml-2">{{ employee.birthDate }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Basic Salary
+            <span class="badge text-dark ml-2">{{ convertToCurrenct(employee.basicSalary) }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Group
+            <span class="badge text-dark ml-2">{{ employee.group }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Status
+            <span class="badge text-dark ml-2">{{ employee.status }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Description
+            <span class="badge text-dark ml-2">{{ employee.description }}</span>
+        </li>
+    </ul>
+
+    <div class="row">
+        <button type="button" (click)="onNoClick()" class="btn btn-dark">Close</button>
+    </div>
+</div>
